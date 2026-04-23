@@ -131,6 +131,9 @@
     "@mastra/vercel": "0.1.0"
   },
   "changesets": [
-    "green-birds-knock"
+    "automated-provider-registry-20260423-065218",
+    "green-birds-knock",
+    "silent-carrots-pump",
+    "swift-actors-judge"
   ]
 }

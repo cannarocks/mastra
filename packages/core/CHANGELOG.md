@@ -1,5 +1,40 @@
 # @mastra/core
 
+## 1.28.0-alpha.0
+
+### Minor Changes
+
+- Added support for custom language server registration with the `servers` field in `LSPConfig`. Previously, LSP inspection only worked with built-in server definitions for TypeScript, JavaScript, Python, Go, and Rust. You can now register additional language servers, such as PHP, Ruby, Java, Kotlin, Swift, or Elixir, by providing a `CustomLSPServer` definition. ([#14969](https://github.com/mastra-ai/mastra/pull/14969))
+
+  **Example:**
+
+  ```typescript
+  const workspace = new Workspace({
+    lsp: {
+      servers: {
+        phpactor: {
+          id: 'phpactor',
+          name: 'Phpactor Language Server',
+          languageIds: ['php'],
+          extensions: ['.php'],
+          markers: ['composer.json'],
+          command: 'phpactor language-server',
+        },
+      },
+    },
+  });
+  ```
+
+  Custom servers are merged with built-in servers and can also override them by using the same ID. Closes #14828.
+
+### Patch Changes
+
+- Update provider registry and model documentation with latest models and providers ([`733bf53`](https://github.com/mastra-ai/mastra/commit/733bf53d9352aedd3ef38c3d501edb275b65b43c))
+
+- Fixed `agent.stream()` callbacks so that `onStepFinish` and `onFinish` now preserve the provider-level `usage.raw` object on `LanguageModelUsage`. This lets consumers inspect provider-specific cache metrics (e.g., Anthropic and Bedrock prompt caching) directly from the callback payload without having to wrap the stream. ([#15546](https://github.com/mastra-ai/mastra/pull/15546))
+
+  Closes #15510.
+
 ## 1.27.0
 
 ### Minor Changes

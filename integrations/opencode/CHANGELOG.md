@@ -1,5 +1,12 @@
 # @mastra/opencode
 
+## 0.0.28-alpha.0
+
+### Patch Changes
+
+- Updated dependencies [[`733bf53`](https://github.com/mastra-ai/mastra/commit/733bf53d9352aedd3ef38c3d501edb275b65b43c), [`b084a80`](https://github.com/mastra-ai/mastra/commit/b084a800db0f82d62e1fc3d6e3e3480da1ba5a53), [`8bbe360`](https://github.com/mastra-ai/mastra/commit/8bbe36042af7fc4be0244dffd8913f6795179421)]:
+  - @mastra/core@1.28.0-alpha.0
+
 ## 0.0.27
 
 ### Patch Changes
